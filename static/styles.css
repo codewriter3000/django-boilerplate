@@ -1,3 +1,14 @@
-/*body {*/
-/*    color: red;*/
-/*}*/
+body {
+    font-family: "Raleway", sans-serif;
+    font-size: 17px;
+}
+
+.logoutButton {
+    background-color: inherit;
+    color: inherit;
+    border: inherit;
+}
+
+.logoutButton:hover {
+    cursor: pointer;
+}
