@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block content %}
+    <style>
+        body {
+            font-family: "Raleway", sans-serif;
+            font-size: 18px;
+        }
+
+        .head_text {
+            color: #313131;
+        }
+
+        .card {
+            box-shadow: 0 16px 48px #33373B;
+        }
+    </style>
+
+    <header class="masthead bg-primary">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-10 mx-auto">
+                    <div class="site-heading">
+                        <h3 class="site-heading my-4 mt-3 text-white">User List</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="row">
+            <!-- Blog Entries Column -->
+            <div class="col-md-8 mt-3 left">
+                {% for app_user in user_list %}
+                    <div class="card mb-4 bg-dark text-light">
+                        <div class="card-body">
+                            <h4 class="card-title">{{ app_user.email }}
+                                {% if app_user.is_staff %}
+                                    <span class="badge badge-warning">Staff</span>
+                                {% endif %}
+                                {% if not app_user.is_active %}
+                                    <span class="badge badge-danger">Inactive</span>
+                                {% endif %}
+                            </h4>
+                            <p>
+                                {% if app_user.is_active %}
+                                    <a href="{% url 'user_detail' app_user.id %}" class="btn btn-primary">View Profile</a>
+                                {% endif %}
+                            </p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            {% block sidebar %} {% include 'sidebar.html' %} {% endblock sidebar %}
+        </div>
+    </div>
+{% endblock %}
