@@ -1,0 +1,17 @@
+{% extends 'base.html' %} {% block content %}
+
+    <div class="container">
+        <div class="row">
+            <div class="card mb-4 mt-3 left top bg-dark text-light">
+                <div class="card-body">
+                    <h4 class="card-title">{{ object.email }}
+                        {% if object.is_staff %}
+                            <span class="badge bg-warning text-dark">Staff</span>
+                        {% endif %}
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}

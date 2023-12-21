@@ -3,6 +3,9 @@
 I created this as a cool boilerplate to use with Pycharm to quickly build the mundane parts of a Django app. 
 It comes with the following:
 - A custom user model named `ApplicationUser` that uses an email in place of a username.
+- Forms for creating and editing a user.
+- Class-based views to create a new user, login/logout a user, list all users, and get user details.
+- Templates to go along with each of the views.
 - An SQLite instance with the superuser with the email: `admin@example.com` and the password `batman29` have already 
 been created.
 - A folder for project configurations called `config` with settings configured for the `ApplicationUser` model

@@ -1,0 +1,18 @@
+$primary: #922B3E;
+
+@import './bootstrap/scss/bootstrap';
+
+body {
+    font-family: "Raleway", sans-serif;
+    font-size: 17px;
+}
+
+.logoutButton {
+    background-color: inherit;
+    color: inherit;
+    border: inherit;
+}
+
+.logoutButton:hover {
+    cursor: pointer;
+}
